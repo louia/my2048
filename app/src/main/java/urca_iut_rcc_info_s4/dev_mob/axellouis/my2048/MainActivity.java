@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton buttonU;
     private ImageButton buttonL;
     private ImageButton buttonR;
+    private LinearLayout glo;
 
     private void putSaveToBundle(Game2048.SaveBundle sb , Bundle bdl){
         bdl.putString("board",sb.board);
@@ -117,28 +118,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void tryMove(int dir){
-        boolean b =false;
-        if(dir==0){
-            //Toast.makeText(this, "Gauche", Toast.LENGTH_SHORT).show();
-            //Log.i("Debug",game.move(true,false));
-            b=game.move(true,false);
-        }
-        else if(dir==1){
-            //Toast.makeText(this, "Haut", Toast.LENGTH_SHORT).show();
-           // Log.i("Debug",game.move(true,true));
-            b=game.move(true,true);
-        }
-        else if(dir==2){
-            //Toast.makeText(this, "Droite", Toast.LENGTH_SHORT).show();
-            //Log.i("Debug",game.move(false,false));
-            b=game.move(false,false);
-        }
-        else if(dir==3){
-            //Toast.makeText(this, "Bas", Toast.LENGTH_SHORT).show();
-            //Log.i("Debug",game.move(false,true));
-            b=game.move(false,true);
-        }
-        if(b==true) {
+        if(game.move(dir<2,dir%2 == 1)) {
             update();
         }
         else{
@@ -154,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         this.bestT = (RatingBar) findViewById(R.id.bestTRB);
         this.score = (TextView) findViewById(R.id.scoreTV);
         this.lastP= (TextView) findViewById(R.id.lastPTV);
+        this.glo = (LinearLayout) findViewById(R.id.globalLO);
 
         //Buttton
         this.buttonD = (ImageButton) findViewById(R.id.buttonD);
@@ -161,6 +142,26 @@ public class MainActivity extends AppCompatActivity {
         this.buttonL = (ImageButton) findViewById(R.id.buttonL);
         this.buttonR = (ImageButton) findViewById(R.id.buttonR);
 
+        glo.setOnTouchListener( new OnSwipeTouchListener(MainActivity.this){
+            @Override
+            public void onSwipeLeft() {
+                tryMove(0);
+            }
+            @Override
+            public void onSwipeTop() {
+                tryMove(1);
+            }
+            @Override
+            public void onSwipeRight() {
+                tryMove(2);
+            }
+            @Override
+            public void onSwipeBottom() {
+                tryMove(3);
+            }
+
+
+        });
         this.buttonD.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
