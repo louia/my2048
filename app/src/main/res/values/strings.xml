@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My2048</string>
+    <string name="mysettings">Settings</string>
+    <string name="densClass">densité</string>
+    <string name="dimClass">Taille</string>
+    <string name="launch">Nouveau jeu</string>
+    <string name="invalidMove">Mouvement invalide</string>
+    <string name="win">Vous avez gagné !!!</string>
+    <string name="gameOver">Fin de partie</string>
+</resources>

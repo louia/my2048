@@ -1,0 +1,15 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">27dp</dimen>
+    <dimen name="activity_vertical_margin">27dp</dimen>
+    <dimen name="globalPadding"> 27dp</dimen>
+    <dimen name="smallPadding" > 9dp</dimen>
+    <dimen name="textPadding" > 9dp</dimen>
+    <dimen name="boardSemiInt" > 9dp</dimen>
+    <dimen name="boardFrame" > 9dp</dimen>
+    <dimen name="scoreWidth" >189dp</dimen>
+    <dimen name="textSize" > 36sp</dimen>
+    <dimen name="textSizeL" > 27dp</dimen>
+    <dimen name="arrowWidth" > 72dp</dimen>
+    <dimen name="arrowLength" > 99dp</dimen>
+</resources>

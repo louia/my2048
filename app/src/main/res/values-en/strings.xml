@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">My2048</string>
+    <string name="mysettings">Settings</string>
+    <string name="launch">New game</string>
+    <string name="densClass">density</string>
+    <string name="dimClass">size</string>
+    <string name="invalidMove">Invalid move</string>
+    <string name="win">You won !!!</string>
+    <string name="gameOver">Game over</string>
+</resources>
